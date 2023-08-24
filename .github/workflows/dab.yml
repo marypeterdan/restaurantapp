@@ -18,3 +18,18 @@ jobs:
         run: mvn test
       - name: package
         run: mvn clean package
+
+      - name: login to docker
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.MY_USERNAME }}
+          password: ${{ secrets.MY_PASSWORD }}
+
+
+        
+      - name: build and push docker
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: maryrani/restapp:1.1
