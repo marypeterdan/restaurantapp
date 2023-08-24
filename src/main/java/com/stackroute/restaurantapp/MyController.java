@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MyController {
-	
+	//just to add
 	@GetMapping("home")
 	public ResponseEntity getHome()
 	{
